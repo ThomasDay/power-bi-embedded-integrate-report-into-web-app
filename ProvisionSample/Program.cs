@@ -594,6 +594,8 @@ namespace ProvisionSample
 
             // Override the api endpoint base URL.  Default value is https://api.powerbi.com
             client.BaseUri = new Uri(apiEndpointUri);
+            
+            client.HttpClient.Timeout = new TimeSpan(0, 60, 0);
 
             return client;
         }
